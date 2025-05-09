@@ -8,4 +8,5 @@ WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
 ENV PORT=8080
-CMD ["java", "-jar", "app.jar"]
+# Configuración para que la aplicación use la variable PORT de Railway
+CMD ["sh", "-c", "java -Dserver.port=$PORT -jar app.jar"]
