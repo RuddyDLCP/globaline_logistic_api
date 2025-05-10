@@ -6,7 +6,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
 
-    // Comenta este método para evitar conflictos con CorsFilter
+    // Keep this commented out to avoid conflicts with CorsFilter
     /*
     @Override
     public void addCorsMappings(CorsRegistry registry) {

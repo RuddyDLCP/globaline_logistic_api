@@ -14,28 +14,30 @@ public class CorsConfig {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
 
-        // Permitir específicamente tu origen de Netlify
+        // Allow your Netlify domain
         config.addAllowedOrigin("https://globalinelogistic.netlify.app");
-        // También puedes permitir localhost para desarrollo
+
+        // Allow localhost for development
         config.addAllowedOrigin("http://localhost:3000");
         config.addAllowedOrigin("http://localhost:5000");
-        // O permitir todos los orígenes si es necesario
-        // config.addAllowedOrigin("*");
 
-        // Permitir todos los encabezados
+        // Allow credentials
+        config.setAllowCredentials(true);
+
+        // Allow all headers
         config.addAllowedHeader("*");
 
-        // Permitir todos los métodos, incluyendo OPTIONS explícitamente
+        // Allow all methods
         config.addAllowedMethod("GET");
         config.addAllowedMethod("POST");
         config.addAllowedMethod("PUT");
         config.addAllowedMethod("DELETE");
         config.addAllowedMethod("OPTIONS");
 
-        // Tiempo que el navegador puede cachear la respuesta preflight
+        // Set max age for preflight requests
         config.setMaxAge(3600L);
 
-        // Aplicar esta configuración a todas las rutas
+        // Apply this configuration to all routes
         source.registerCorsConfiguration("/**", config);
 
         return new CorsFilter(source);
