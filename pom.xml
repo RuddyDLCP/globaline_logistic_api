@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.globaline.logistic.api</groupId>
 	<artifactId>globaline_logistic_api</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>globaline_logistic_api</name>
 	<description>API para glonaline logistic</description>
 	<url/>
@@ -27,7 +27,7 @@
 		<url/>
 	</scm>
 	<properties>
-		<java.version>21</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
