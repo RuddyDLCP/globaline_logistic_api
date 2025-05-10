@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
@@ -64,7 +65,15 @@ public class AuthController {
             response.put("nombre", loginRequest.getNombre());
             response.put("email", loginRequest.getEmail());
 
-            return ResponseEntity.ok(response);
+            // Agregar un token simple (en producción deberías usar JWT adecuadamente)
+            String token = "Bearer " + Base64.getEncoder().encodeToString(
+                    (loginRequest.getEmail() + ":" + role + ":" + System.currentTimeMillis()).getBytes()
+            );
+            response.put("token", token);
+
+            return ResponseEntity.ok()
+                    .header("Authorization", token)
+                    .body(response);
         } catch (Exception e) {
             logger.severe("Error en login: " + e.getMessage());
             e.printStackTrace();
