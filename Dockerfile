@@ -7,6 +7,5 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
-ENV PORT=8080
-# Configuración para que la aplicación use la variable PORT de Railway
-CMD ["sh", "-c", "java -Dserver.port=$PORT -jar app.jar"]
+# No es necesario definir PORT aquí, Railway lo proporciona automáticamente
+CMD ["java", "-jar", "app.jar"]

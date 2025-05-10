@@ -1,4 +1,4 @@
-package com.globaline.logistic.api.globalie_logistic_api.model;
+package com.globaline.logistic.api.globaline_logistic_api.model;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;

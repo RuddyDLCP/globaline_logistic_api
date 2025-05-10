@@ -1,7 +1,7 @@
-package com.globaline.logistic.api.globalie_logistic_api.controller;
+package com.globaline.logistic.api.globaline_logistic_api.controller;
 
-import com.globaline.logistic.api.globalie_logistic_api.model.Usuario;
-import com.globaline.logistic.api.globalie_logistic_api.service.UsuarioService;
+import com.globaline.logistic.api.globaline_logistic_api.model.Usuario;
+import com.globaline.logistic.api.globaline_logistic_api.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -1,9 +1,8 @@
-package com.globaline.logistic.api.globalie_logistic_api.service;
+package com.globaline.logistic.api.globaline_logistic_api.service;
 
-import com.globaline.logistic.api.globalie_logistic_api.model.Usuario;
-import com.globaline.logistic.api.globalie_logistic_api.repository.UsuarioRepository;
+import com.globaline.logistic.api.globaline_logistic_api.model.Usuario;
+import com.globaline.logistic.api.globaline_logistic_api.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

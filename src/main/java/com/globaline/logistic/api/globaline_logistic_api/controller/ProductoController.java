@@ -1,7 +1,7 @@
-package com.globaline.logistic.api.globalie_logistic_api.controller;
+package com.globaline.logistic.api.globaline_logistic_api.controller;
 
-import com.globaline.logistic.api.globalie_logistic_api.model.Producto;
-import com.globaline.logistic.api.globalie_logistic_api.service.ProductoService;
+import com.globaline.logistic.api.globaline_logistic_api.model.Producto;
+import com.globaline.logistic.api.globaline_logistic_api.service.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

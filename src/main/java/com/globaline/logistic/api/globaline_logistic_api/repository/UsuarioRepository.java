@@ -1,6 +1,6 @@
-package com.globaline.logistic.api.globalie_logistic_api.repository;
+package com.globaline.logistic.api.globaline_logistic_api.repository;
 
-import com.globaline.logistic.api.globalie_logistic_api.model.Usuario;
+import com.globaline.logistic.api.globaline_logistic_api.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

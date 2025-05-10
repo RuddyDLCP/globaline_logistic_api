@@ -1,7 +1,7 @@
-package com.globaline.logistic.api.globalie_logistic_api.service;
+package com.globaline.logistic.api.globaline_logistic_api.service;
 
-import com.globaline.logistic.api.globalie_logistic_api.model.Producto;
-import com.globaline.logistic.api.globalie_logistic_api.repository.ProductoRepository;
+import com.globaline.logistic.api.globaline_logistic_api.model.Producto;
+import com.globaline.logistic.api.globaline_logistic_api.repository.ProductoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

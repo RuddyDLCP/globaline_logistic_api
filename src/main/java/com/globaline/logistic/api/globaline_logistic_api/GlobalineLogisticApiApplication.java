@@ -1,4 +1,4 @@
-package com.globaline.logistic.api.globalie_logistic_api;
+package com.globaline.logistic.api.globaline_logistic_api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
