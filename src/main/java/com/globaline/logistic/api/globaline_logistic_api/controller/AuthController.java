@@ -12,7 +12,6 @@ import java.util.logging.Logger;
 
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin(origins = "*") // Permitir solicitudes de cualquier origen
 public class AuthController {
 
     private static final Logger logger = Logger.getLogger(AuthController.class.getName());
