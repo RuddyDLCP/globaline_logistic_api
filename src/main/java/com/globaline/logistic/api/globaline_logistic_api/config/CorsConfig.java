@@ -23,11 +23,6 @@ public class CorsConfig {
         // Permitir todos los métodos (GET, POST, PUT, DELETE, etc.)
         config.addAllowedMethod("*");
 
-        // Permitir cookies en solicitudes cross-origin
-        // Nota: Esto no funcionará con allowedOrigin("*"),
-        // pero lo dejamos comentado por si necesitas habilitarlo después
-        // config.setAllowCredentials(true);
-
         // Tiempo que el navegador puede cachear la respuesta preflight
         config.setMaxAge(3600L);
 
