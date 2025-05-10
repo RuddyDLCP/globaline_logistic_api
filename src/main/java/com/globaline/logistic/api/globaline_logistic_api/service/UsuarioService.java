@@ -17,9 +17,6 @@ public class UsuarioService {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
-    /**
-     * Verifica si existe un usuario con exactamente las mismas credenciales
-     */
     public boolean existeUsuarioExacto(String email, String password, String nombre) {
         List<Usuario> usuarios = usuarioRepository.findAllByEmail(email);
 
