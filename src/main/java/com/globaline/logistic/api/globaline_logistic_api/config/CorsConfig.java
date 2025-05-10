@@ -6,26 +6,33 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
-import java.util.Arrays;
-
 @Configuration
 public class CorsConfig {
 
     @Bean
     public CorsFilter corsFilter() {
-        CorsConfiguration corsConfiguration = new CorsConfiguration();
-        corsConfiguration.setAllowedOrigins(Arrays.asList(
-                "https://globalinelogistic.netlify.app",
-                "http://127.0.0.1:5500",
-                "http://localhost:5500"
-        ));
-        corsConfiguration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
-        corsConfiguration.setAllowedHeaders(Arrays.asList("*"));
-        corsConfiguration.setAllowCredentials(true);
-        corsConfiguration.setMaxAge(3600L);
-
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", corsConfiguration);
+        CorsConfiguration config = new CorsConfiguration();
+
+        // Permitir todos los orígenes
+        config.addAllowedOrigin("*");
+
+        // Permitir todos los encabezados
+        config.addAllowedHeader("*");
+
+        // Permitir todos los métodos (GET, POST, PUT, DELETE, etc.)
+        config.addAllowedMethod("*");
+
+        // Permitir cookies en solicitudes cross-origin
+        // Nota: Esto no funcionará con allowedOrigin("*"),
+        // pero lo dejamos comentado por si necesitas habilitarlo después
+        // config.setAllowCredentials(true);
+
+        // Tiempo que el navegador puede cachear la respuesta preflight
+        config.setMaxAge(3600L);
+
+        // Aplicar esta configuración a todas las rutas
+        source.registerCorsConfiguration("/**", config);
 
         return new CorsFilter(source);
     }
