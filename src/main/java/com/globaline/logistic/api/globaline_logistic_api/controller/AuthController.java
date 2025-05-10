@@ -12,6 +12,10 @@ import java.util.logging.Logger;
 
 @RestController
 @RequestMapping("/auth")
+@CrossOrigin(origins = {"https://globalinelogistic.netlify.app", "http://localhost:3000", "http://localhost:5000", "http://127.0.0.1:5500"},
+        methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE, RequestMethod.OPTIONS},
+        allowedHeaders = "*",
+        allowCredentials = "true")
 public class AuthController {
 
     private static final Logger logger = Logger.getLogger(AuthController.class.getName());
@@ -77,6 +81,12 @@ public class AuthController {
 
             return ResponseEntity.ok(response);
         }
+    }
+
+    // Agregar un endpoint OPTIONS para manejar las solicitudes preflight
+    @RequestMapping(value = "/login", method = RequestMethod.OPTIONS)
+    public ResponseEntity<?> handleOptions() {
+        return ResponseEntity.ok().build();
     }
 
     // Clase interna para manejar la solicitud de login
